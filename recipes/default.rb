@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: useradd
+# Cookbook Name:: usrgrpkey
 # Recipe:: default
 #
 # Copyright 2013, YOUR_COMPANY_NAME
@@ -19,7 +19,7 @@
 #
 
 user "someuser" do
-     comment "default d-user"
+     comment "default user"
      home "/home/someuser"
      shell "/bin/bash"
      password "<enter hashed password here>"
