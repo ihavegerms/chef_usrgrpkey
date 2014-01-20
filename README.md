@@ -7,7 +7,7 @@ Requirements
 A databag named "users" needs to be created containing an object named for the user you will be adding. Within the object, place the following data;
 
 {
-  "name": "data_bag_item_users_darren",
+  "name": "data_bag_item_users_someuser",
   "json_class": "Chef::DataBagItem",
   "chef_type": "data_bag_item",
   "data_bag": "users",
