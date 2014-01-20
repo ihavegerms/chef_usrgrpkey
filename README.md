@@ -1,45 +1,28 @@
 useradd Cookbook
 ================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Chef cookbook to create a custom user, add them to the "wheel" group, and populate authorized_keys
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+A databag named "users" needs to be created containing an object named for the user you will be adding. Within the object, place the following data;
 
-e.g.
-#### packages
-- `toaster` - useradd needs toaster to brown your bagel.
+{
+  "name": "data_bag_item_users_darren",
+  "json_class": "Chef::DataBagItem",
+  "chef_type": "data_bag_item",
+  "data_bag": "users",
+  "raw_data": {
+    "id": "someuser",
+    "key": "ssh-rsa AAAAB3NzaC1yc2E..."
+  }
+}
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
-
-e.g.
-#### useradd::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['useradd']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+None
 
 Usage
 -----
-#### useradd::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
 Just include `useradd` in your node's `run_list`:
 
 ```json
@@ -53,9 +36,7 @@ Just include `useradd` in your node's `run_list`:
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
 
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write your change
@@ -65,4 +46,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Darren Carpenter
